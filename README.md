@@ -1,3 +1,3 @@
 # Портфолио
 
-Проект доступен по ссылке: [Портфолио](https://crypto-tracker-38b8.vercel.app/)
+Проект доступен по ссылке: [Портфолио](https://portfolio-omega-five-tfm6m3xkss.vercel.app/)
