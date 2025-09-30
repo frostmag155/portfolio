@@ -156,12 +156,11 @@ const Projects = () => {
       github: "https://github.com/frostmag155/currency-tracker-v2",
     },
     {
-      title: "Apple Store - Fullstack",
+      title: "Apple Shope - Fullstack",
       description: "Полнофункциональный интернет-магазин техники Apple. Frontend на React с современными анимациями, backend на Node.js с MySQL базой данных. Полный цикл от просмотра каталога до оформления заказа.",
       tech: ["React", "Node.js", "Express", "MySQL", "PHPMyAdmin", "REST API", "Framer Motion"],
       link: "https://frostmag155.github.io/shop-frontend/",
       github: "https://github.com/frostmag155/shop-frontend",
-      backend: "https://github.com/frostmag155/shop-backend"
     }
   ];
 
