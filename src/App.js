@@ -160,6 +160,25 @@ const Projects = () => {
       description: "Полнофункциональный интернет-магазин техники Apple. Frontend на React с современными анимациями, backend на Node.js с MySQL базой данных. Полный цикл от просмотра каталога до оформления заказа.",
       tech: ["React", "Node.js", "Express", "MySQL", "PHPMyAdmin", "REST API", "Framer Motion"],
       github: "https://github.com/frostmag155/shop-frontend",
+    },
+    {
+      title: "Tube Solver - Решение гидравлических систем",
+      description: "Веб-приложение для расчета и анализа гидравлических систем трубопроводов. Решение систем уравнений для определения расходов жидкости в сложных сетях.",
+      tech: ["React", "TypeScript", "MathJS", "Алгоритмы", "Инженерия"],
+      github: "https://github.com/frostmag155/tube-solver"
+    },
+    {
+      title: "File Exchange Service",
+      description: "Сервис обмена файлами с веб-интерфейсом. Загрузка, хранение и скачивание файлов через удобный UI. Полнофункциональное backend-решение для управления файлами.",
+      tech: ["Java", "Spring Boot", "Maven", "REST API", "Файловые операции"],
+      github: "https://github.com/frostmag155/file-exchange-service"
+    },
+    {
+      title: "Weather Service",
+      description: "Микросервис для получения и предоставления погодных данных. RESTful API для интеграции с другими приложениями и сервисами.",
+      tech: ["Java", "Spring Boot", "API Integration", "REST API", "Микросервисы"],
+      link: "https://weather-service-two.vercel.app/",
+      github: "https://github.com/frostmag155/weather-service"
     }
   ];
 
