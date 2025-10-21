@@ -3,7 +3,52 @@ import React, { useEffect, useRef } from 'react';
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
+// Импортируем утилиту для Telegram (создашь позже)
+import { sendTelegramNotification } from './utils/telegram';
+
 function App() {
+  // Добавляем эффект для аналитики
+  useEffect(() => {
+    // Функция для получения информации о браузере
+    // Функция для получения информации о браузере
+    const getBrowserInfo = () => {
+      const ua = navigator.userAgent;
+      let browser = "Unknown";
+
+      if (ua.includes("Chrome")) browser = "Chrome";
+      else if (ua.includes("Firefox")) browser = "Firefox";
+      else if (ua.includes("Safari")) browser = "Safari";
+      else if (ua.includes("Edge")) browser = "Edge";
+
+      return {
+        browser,
+        language: navigator.language,
+        platform: navigator.platform,
+        screen: `${window.screen.width}x${window.screen.height}` // ИСПРАВЛЕНО: добавлен window.
+      };
+    };
+
+    // Отправляем уведомление о новом посещении
+    const browserInfo = getBrowserInfo();
+
+    const message = `
+🚀 <b>Новый посетитель на портфолио!</b>
+
+🌐 <b>Страница:</b> ${window.location.href}
+⏰ <b>Время:</b> ${new Date().toLocaleString('ru-RU')}
+📱 <b>Браузер:</b> ${browserInfo.browser}
+🖥️ <b>Экран:</b> ${browserInfo.screen}
+🌍 <b>Язык:</b> ${browserInfo.language}
+💻 <b>Платформа:</b> ${browserInfo.platform}
+    `.trim();
+
+    sendTelegramNotification(message);
+
+    // Также логируем в консоль для отладки
+    console.log('📊 Аналитика: Посетитель зашел на сайт');
+
+  }, []); // Пустой массив зависимостей = выполнится один раз при загрузке
+
   return (
     <div className="App">
       <Header />
@@ -154,6 +199,33 @@ const Projects = () => {
       tech: ["React", "Framer Motion", "API", "Аналитика данных", "Vercel"],
       link: "https://currency-tracker-v2.vercel.app/",
       github: "https://github.com/frostmag155/currency-tracker-v2",
+    },
+    {
+      title: "Apple Store - Fullstack",
+      description: "Полнофункциональный интернет-магазин техники Apple. Frontend на React с современными анимациями, backend на Node.js с MySQL базой данных. Полный цикл от просмотра каталога до оформления заказа.",
+      tech: ["React", "Node.js", "Express", "MySQL", "PHPMyAdmin", "REST API", "Framer Motion"],
+      //link: "https://frostmag155.github.io/shop-frontend/",
+      github: "https://github.com/frostmag155/shop-frontend",
+      backend: "https://github.com/frostmag155/shop-backend"
+    },
+    {
+      title: "Tube Solver - Решение гидравлических систем",
+      description: "Веб-приложение для расчета и анализа гидравлических систем трубопроводов. Решение систем уравнений для определения расходов жидкости в сложных сетях.",
+      tech: ["Python", "Алгоритмы", "Инженерия"],
+      github: "https://github.com/frostmag155/tube-solver"
+    },
+    {
+      title: "File Exchange Service",
+      description: "Сервис обмена файлами с веб-интерфейсом. Загрузка, хранение и скачивание файлов через удобный UI. Полнофункциональное backend-решение для управления файлами.",
+      tech: ["TS", "JS", "REST API", "Файловые операции"],
+      github: "https://github.com/frostmag155/file-exchange-service"
+    },
+    {
+      title: "Weather Service",
+      description: "Микросервис для получения и предоставления погодных данных. RESTful API для интеграции с другими приложениями и сервисами.",
+      tech: ["TS", "REST API", "Микросервисы"],
+      link: "https://weather-service-two.vercel.app/",
+      github: "https://github.com/frostmag155/weather-service"
     }
   ];
 
