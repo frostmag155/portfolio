@@ -1,4 +1,3 @@
-// App.js (главный компонент)
 import React, { useEffect, useRef } from 'react';
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
