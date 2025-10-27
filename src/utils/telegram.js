@@ -1,4 +1,3 @@
-// Пытаемся импортировать конфиг, если он есть
 let TELEGRAM_CONFIG = {};
 
 try {
@@ -33,11 +32,11 @@ export const sendTelegramNotification = async (message) => {
     });
 
     if (response.ok) {
-      console.log('✅ Уведомление отправлено в Telegram');
+      console.log(' Уведомление отправлено в Telegram');
     } else {
-      console.log('❌ Ошибка отправки в Telegram');
+      console.log(' Ошибка отправки в Telegram');
     }
   } catch (error) {
-    console.log('📨 Telegram error:', error);
+    console.log(' Telegram error:', error);
   }
 };
